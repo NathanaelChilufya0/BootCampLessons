@@ -1,0 +1,125 @@
+/*
+for gap container
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px; /* This sets a 14px gap between grid items
+    }
+    
+    .grid-item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    }
+    */
+
+body{
+    background-color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.coverImage_Container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.coverImage{
+    display: flex;
+    width: 99%;
+    height: 450px;
+    border-radius: 10px;
+    position: relative;
+    background-position: center;
+    overflow: auto;/*in the case the text is too much within the given width and height, a scroll buttin will appear
+    E.G <div style="z-index:1;width: 200px; height: 100px; overflow: auto;">
+<p>This is some content that is too large to fit within the box. This is some content that is too large to fit within the box. This is some content that is too large to fit within the box.</p>
+</div>
+    */
+    gap: 14px;
+    fill: var(--logo-color);/*is used to set the fill color of an SVG element using a CSS custom property (also known as a CSS variable)*/
+}
+
+.myform{
+    display: flex;
+    color: black;
+    align-items: center;
+}
+
+.mytable{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border-collapse: collapse;
+    border-width: 1px;
+}
+th{
+    border-style: solid;
+    border-color:rgb(243, 243, 208);
+    width: 400px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+td{
+    border-style: solid;
+    border-color: rgb(243, 243, 208);
+    width: 400px;
+    height: 20px;
+    color: black;
+    font-weight: 800;
+}
+
+h1,h3{
+    text-align: center;
+    color: black;
+    background-color: blue;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.buttonContainer{
+    justify-content: center;
+    display: flex;
+    gap: 100px;
+}
+#button{
+    width: 150px;
+    height: 35px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: blue;
+    color: black;
+    font-size: medium;
+    text-align: center;
+    border-radius: 5px;
+    border: grey solid 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;            
+}
+#button:hover{
+    background-color: blue;
+    border: white solid 1.5px;
+    color: white;
+    transition: ease-out 0.15s;
+}
+
+label{
+    margin: 5px;
+    width: auto;
+    height: 20px;  
+}
+input{
+    margin: 5px;
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.foot{
+    background-color: black;
+    color: white;
+    padding: 20px 5px;
+}
