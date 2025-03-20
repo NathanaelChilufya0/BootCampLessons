@@ -52,7 +52,7 @@
     </div>
     <div>
         <h3>List Vehicle Details</h3>
-        <div>
+        <div id="list">
             <!--add an option to fill in table using JS from inputs-->  
             <table class="mytable">
                 <thead>
@@ -89,6 +89,9 @@
         </div>
     </div>
     <script>
+        window.onload = async ()=>{
+            await getVehicles()
+        }
         function viewCharges(){
             let x = `
             <ol>
@@ -102,6 +105,35 @@
         function clearData(){
             let y=``;
             document.getElementById('charges').innerHTML=y;
+        }
+
+        async function getVehicles(){
+            let response=await fetch("http://localhost:8080/Vehicle")
+            let vehicleList = await response.json()
+            console.log(vehicleList)
+            displayVeh(vehicleList)
+        }
+
+        function displayVeh(data){
+            let table = ` <table class="mytable">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>`
+            data.map(v=>{
+                table+=`<tr>
+                        <td>${v.modelNumber}</td>
+                        <td>${v.name}</td>
+                        <td>${v.price}</td>
+                    </tr>`
+            })
+            table+=`</tbody>
+            </table>`
+            document.getElementById("list").innerHTML=table
         }
     </script>
     <footer class="foot">
