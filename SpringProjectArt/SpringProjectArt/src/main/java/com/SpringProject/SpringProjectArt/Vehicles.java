@@ -1,6 +1,11 @@
 package com.SpringProject.SpringProjectArt;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+@Entity
 public class Vehicles {
+    @Id
+    private int vehicleId;
     private String name;
     private String modelNumber;
     private String color;
@@ -13,6 +18,9 @@ public class Vehicles {
         this.price = price;
     }
 
+    public Vehicles(){
+        System.out.println("Created");
+    }
     public String getName() {
         return name;
     }

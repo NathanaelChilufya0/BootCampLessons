@@ -1,5 +1,6 @@
 package com.SpringProject.SpringProjectArt;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class VehicleController {
-    @GetMapping(path = "Vehicle")
+    @GetMapping(path = "vehicles")
     public List<Vehicles> getVehicle(){
         System.out.println("here are our vehicles");
         List<Vehicles> vehicles = new ArrayList<>();
@@ -17,5 +19,4 @@ public class VehicleController {
         vehicles.add(new Vehicles("Agera","AC4R","Grey",2500000));
         return vehicles;
     }
-
 }
