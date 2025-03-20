@@ -108,7 +108,7 @@
         }
 
         async function getVehicles(){
-            let response=await fetch("http://localhost:8080/Vehicle")
+            let response=await fetch("http://localhost:8080/vehicles")
             let vehicleList = await response.json()
             console.log(vehicleList)
             displayVeh(vehicleList)
