@@ -9,17 +9,9 @@
     <meta name="commit" content="'#URL'">
     <meta name="keywords" content="vehicle tracker">
     <meta name="description" content="this is a basic webapp that aids track vehicles. still in progress">
+    <link rel="scripts" href="script.js">
 </head>
 <body>
-    <!-- For Gap attribute
-    <div class="grid-container">
-        <div class="grid-item">Item 1</div>
-        <div class="grid-item">Item 2</div>
-        <div class="grid-item">Item 3</div>
-        <div class="grid-item">Item 4</div>
-      </div>
-      -->
-      
     <!--did you know that you can copy attributes, styles etc from edge or chrome for a particular html element-->
     <!--The viewBox attribute defines the coordinate system of the SVG. It takes four values: min-x, min-y, width, and height. 
     In this case, viewBox="0 0 163 48" means the coordinate system starts at (0, 0) and spans 163 units wide and 48 units high. 
@@ -101,19 +93,19 @@
             `;
             document.getElementById('charges').innerHTML=x;
         }
-
+        
         function clearData(){
             let y=``;
             document.getElementById('charges').innerHTML=y;
         }
-
+        
         async function getVehicles(){
             let response=await fetch("http://localhost:8080/vehicles")
             let vehicleList = await response.json()
             console.log(vehicleList)
             displayVeh(vehicleList)
         }
-
+        
         function displayVeh(data){
             let table = ` <table class="mytable">
                 <thead>
